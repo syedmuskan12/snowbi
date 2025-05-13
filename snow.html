@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Hareem!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('https://images.unsplash.com/photo-1531685250784-7569952593d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+      background-size: cover;
+      overflow: hidden;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .message-box {
+      background-color: rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      padding: 25px;
+      max-width: 450px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      animation: bounce 2s ease infinite;
+      border: 3px dotted #ff6bcd;
+      margin: 20px;
+      position: relative;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    h1 {
+      color: #ff1493;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 0px #fff;
+    }
+
+    p {
+      color: #5a2d6e;
+      font-size: 1rem;
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+
+    .signature {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 1.5rem;
+      color: #ff1493;
+      margin-top: 20px;
+    }
+
+    .bubble {
+      position: absolute;
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 50%;
+      animation: float-up 8s linear infinite;
+    }
+
+    @keyframes float-up {
+      0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-100vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    .sticker {
+      position: absolute;
+      font-size: 24px;
+      animation: spin 4s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .highlight {
+      color: #ff1493;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="message-box">
+    <h1>🎂 Happy Belated Birthday, Hareem! 🎈</h1>
+    <p>To the <span class="highlight">sweetest 4-year-old</span> in the world! 🌟</p>
+    <p>My love for you is <span class="highlight">bigger than all the balloons</span>! 🎈💖</p>
+    <p>May your year be filled with:</p>
+    <p>🍭 Candy giggles & playtime<br>
+       🎨 Rainbow colors & stories<br>
+       � Silly dances & hugs!</p>
+    <p>You make the world brighter, little sunshine! ☀️</p>
+    <div class="signature">With all my love 💝</div>
+    
+    <div class="sticker" style="top: -12px; left: -12px;">🦄</div>
+    <div class="sticker" style="bottom: -12px; right: -12px;">🎀</div>
+  </div>
+
+  <script>
+    function createBubbles() {
+      const colors = ['#ffc0cb', '#ffb6c1', '#ff69b4', '#ff1493', '#db7093'];
+      
+      for (let i = 0; i < 20; i++) {
+        const bubble = document.createElement('div');
+        bubble.classList.add('bubble');
+        
+        bubble.style.left = Math.random() * 100 + 'vw';
+        bubble.style.bottom = -50 + 'px';
+        bubble.style.width = 15 + Math.random() * 25 + 'px';
+        bubble.style.height = bubble.style.width;
+        bubble.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        bubble.style.animationDuration = 5 + Math.random() * 10 + 's';
+        bubble.style.animationDelay = Math.random() * 5 + 's';
+        
+        document.body.appendChild(bubble);
+      }
+    }
+    
+    createBubbles();
+  </script>
+</body>
+</html>
